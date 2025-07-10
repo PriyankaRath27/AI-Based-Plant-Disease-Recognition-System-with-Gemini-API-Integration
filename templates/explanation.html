@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ mode.title() }} – PHASAL</title>
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #e9f5ec, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      color: #333;
+    }
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .img-preview {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      resize: vertical;
+      border: 1px solid #ccc;
+      padding: 15px;
+      font-size: 1rem;
+      line-height: 1.6;
+      border-radius: 8px;
+      background: #f8f8f8;
+    }
+    .btn-back {
+      margin-top: 25px;
+    }
+    h2, h4 {
+      color: #2d6a4f;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>{{ mode.title() }} Info for: {{ prediction.name.replace("__", " – ").capitalize() }}</h2>
+    
+    {% if imagepath %}
+      <img src="{{ imagepath }}" alt="Plant" class="img-preview">
+    {% endif %}
+
+    <p><strong>Cause:</strong> {{ prediction.cause }}</p>
+    <p><strong>Cure:</strong> {{ prediction.cure }}</p>
+
+    <h4>Disease Explanation (via Gemini AI)</h4>
+    <textarea class="form-control" readonly>{{ explanation.replace("**", "") }}</textarea>
+
+    <a href="/" class="btn btn-success btn-back">← Back to Home</a>
+  </div>
+
+</body>
+</html>

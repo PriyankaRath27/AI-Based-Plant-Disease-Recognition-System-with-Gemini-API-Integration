@@ -1,0 +1,183 @@
+/* Carousel item styling */
+.carousel-item {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    color: white;
+    background-image: url('../images/crop_background1.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: changeFrame 20s linear infinite;
+}
+
+/* Animated background */
+@keyframes changeFrame {
+    0% {
+        background-image: url('../images/crop_background1.jpg');
+    }
+    25% {
+        background-image: url('../images/crop_background2.jpg');
+    }
+    50% {
+        background-image: url('../images/crop_background3.jpg');
+    }
+    75% {
+        background-image: url('../images/crop_background4.jpg');
+    }
+}
+
+/* Main wrapper */
+.carousel-text-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 40px 20px 150px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+/* Title */
+.carousel-text-title {
+    font-weight: bold;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #565257;
+    text-align: center;
+}
+
+/* Upload form box */
+.form-box {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1125px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Form inner styling */
+form {
+    margin: auto;
+}
+
+.input-box {
+    margin: 18px;
+}
+
+/* Result container */
+.result-container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Result card box */
+.result-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Image container */
+.result-img-container {
+    width: 30%;
+    min-width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 102px 0px 0px 0px;
+}
+
+/* Image */
+.result-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Explanation text */
+.result-text {
+    width: 67%;
+    min-width: 500px;
+    margin: auto;
+    background-color: transparent;
+    color: black;
+    height: auto;
+    max-height: 489px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Paragraph spacing */
+.result-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Headings */
+.result-text h3 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.disease-info {
+  width: 80%;            /* Increase width */
+  font-size: 20px;       /* Larger text */
+  padding: 25px;         /* More space inside */
+  background-color: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  color: #856404;
+  margin: 20px auto;     /* Center the box */
+  text-align: left;
+}
+
+
+/* Scroll to Top Button (Optional) */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .carousel-text-title {
+        font-size: 36px;
+    }
+
+    .result-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .disease-info {
+    width: 95%;
+    font-size: 18px;
+    padding: 15px;
+    }
+
+    .result-img-container,
+    .result-text {
+        width: 100%;
+    }
+}
